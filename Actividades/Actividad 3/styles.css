@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&family=Roboto:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    width: 80vw;
+    height: 100vh;
+    
+}
+main{
+    margin: 20px 20px;
+    
+}
+
+/* similiar styling */
+
+.btn{
+    color:white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+}
+.cardOne, .cardTwo, .cardThree, .cardFour{
+    border: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 15px;
+}
+.cardFour h3 {
+    margin: 15px 0px 5px 0;
+}
+.cardOne,
+.cardTwo,
+.cardThree,
+.cardFour,
+p {
+    margin-top: 15px;
+}
+
+
+/* navbar styling start */
+.navbar{
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid lightgrey;
+    justify-content: space-around;
+}
+
+.navbar ul{
+    list-style: none;
+    display: flex;
+    
+}
+.navbar_items li{
+    margin:10px
+}
+.navbar_items a{
+    text-decoration: none;
+    color: black;
+}
+
+/* section top styling start */
+.top{
+    display: flex;
+    margin: 20px 35px;
+}
+.top_img{
+    width: 40%;
+    height:100%;
+}
+
+.top_text{
+    width: 60%;
+}
+.top span{
+    color: red;
+    text-transform: uppercase;
+    font-weight:700;
+    font-size: 15px;  
+}
+.top h2{
+    margin-top: 2px;
+    margin-bottom: 10px;
+}
+.price{
+    display: flex;
+}
+.price_p{
+    font-size: 25px;
+    font-weight: 700;
+    margin: 15px 15px 10px 0px;
+}
+.price_btn{
+    background-color: #0d6efd;
+    margin: 15px 15px 10px 0px;
+
+}
+.services{
+    display: flex;
+    margin-top: 10px;
+    
+}
+.services i,p{
+    margin-right: 15px;
+}
+/* section middle styling start */
+.middle{
+    margin: 20px 35px;
+}
+.accesorios{
+    display: flex;
+    
+}
+
+.cardTwo_btn{
+    background-color: red;
+    width:20%;
+    justify-content: left;
+}
+.cardFour_btn{
+    background-color: #0d6efd;
+    width:20%;
+    justify-content: left;
+}
+/* bottom setcion styling start */
+.bottom{
+    display: flex;
+    margin: 20px 35px;
+    background-color: azure;
+    padding: 25px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+form label{
+    margin-bottom: 10px;
+}
+form input{
+    border: 1px solid lightgray;;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.form_btn{
+    width: 40%;
+    justify-content: center;
+    background-color: #0d6efd;
+}
+
+/* media queries */
+/* And */
+/* @media (min-width: 768px) and (max-width: 1023px) {
+    /* Estas reglas solo aplicarán a tamaños entre 768px y 1023px */
+/* } */
