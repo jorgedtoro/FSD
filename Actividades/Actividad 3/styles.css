@@ -46,14 +46,16 @@ p {
 /* navbar styling start */
 .navbar{
     display: flex;
+    justify-content: space-between;
     padding: 10px;
     border-bottom: 1px solid lightgrey;
-    justify-content: space-around;
+    
 }
 
 .navbar ul{
     list-style: none;
     display: flex;
+    /* justify-self: right; */
     
 }
 .navbar_items li{
