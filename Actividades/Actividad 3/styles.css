@@ -7,13 +7,10 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
-    
     height: 100vh;
-    
 }
 main{
-    margin: 20px 20px;
-    
+    margin: 20px 80px;
 }
 
 /* similiar styling */
@@ -30,25 +27,26 @@ main{
     flex-direction: column;
     margin: 10px;
     padding: 15px;
+    width: 25%;
 }
-.cardFour h3 {
-    margin: 15px 0px 5px 0;
-}
-.cardOne,
-.cardTwo,
-.cardThree,
-.cardFour,
-p {
+
+.cardOne, .cardTwo, .cardThree, .cardFour, p {
     margin-top: 15px;
 }
 
+.cardTwo_btn, .cardFour_btn{
+    margin-top: 8px;
+}
+header{
 
+    border-bottom: 1px solid lightgrey;
+}
 /* navbar styling start */
 .header{
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    border-bottom: 1px solid lightgrey;
+    margin: 20px 80px;
     
 }
 
@@ -65,6 +63,12 @@ p {
     text-decoration: none;
     color: black;
 }
+.navbar_items a:hover{
+    border: 1px solid lightgrey;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0px 0.5px lightgrey;
+}
 
 /* section top styling start */
 .top{
@@ -74,12 +78,22 @@ p {
 .top_img{
     width: 40%;
     height:100%;
+  
 }
-
+.top_img img{
+    width: 60%;
+}
+.top_img span{
+    float:left;
+    border: none;
+    background-color: green;
+    color: white;
+    padding: 6px;
+}
 .top_text{
     width: 60%;
 }
-.top span{
+.top_text span{
     color: red;
     text-transform: uppercase;
     font-weight:700;
@@ -105,6 +119,7 @@ p {
 .services{
     display: flex;
     margin-top: 10px;
+    align-items: center;
     
 }
 .services i,p{
@@ -118,24 +133,38 @@ p {
     display: flex;
     
 }
+.accesorios img{
+    margin-bottom: 10px;
+    width: 90%;
+    height: 150px;
+}
 
 .cardTwo_btn{
     background-color: red;
-    width:20%;
+    width:25%;
     justify-content: left;
 }
 .cardFour_btn{
     background-color: #0d6efd;
-    width:20%;
+    width:25%;
     justify-content: left;
 }
 /* bottom setcion styling start */
 .bottom{
+    background-color: rgba(146, 200, 247,0.25);
     display: flex;
     margin: 20px 35px;
-    background-color: azure;
     padding: 25px;
+    justify-content: space-around;
 }
+.columnLeft{
+   
+    width: 50%;
+}
+.columnLeft h2{
+    font-size: 45px;
+}
+
 form{
     display: flex;
     flex-direction: column;
@@ -154,7 +183,16 @@ form input{
     justify-content: center;
     background-color: #0d6efd;
 }
-
+/* footer styling start */
+footer{
+    border-top: 1px solid lightgrey;
+    display: flex;
+    justify-content: center;
+}
+footer p{
+    font-weight: 700;
+    padding: 5px;
+}
 /* media queries */
 /* And */
 /* @media (min-width: 768px) and (max-width: 1023px) {
