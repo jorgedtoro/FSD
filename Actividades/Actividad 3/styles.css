@@ -7,7 +7,7 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
-    width: 80vw;
+    
     height: 100vh;
     
 }
@@ -44,7 +44,7 @@ p {
 
 
 /* navbar styling start */
-.navbar{
+.header{
     display: flex;
     justify-content: space-between;
     padding: 10px;
