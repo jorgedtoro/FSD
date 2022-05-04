@@ -21,21 +21,26 @@ main{
     border-radius: 4px;
     padding: 8px;
 }
+
 .cardOne, .cardTwo, .cardThree, .cardFour{
     border: 1px solid lightgray;
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    
     padding: 15px;
     width: 25%;
 }
 
-.cardOne, .cardTwo, .cardThree, .cardFour, p {
+.card_p {
     margin-top: 15px;
 }
 
-.cardTwo_btn, .cardFour_btn{
+.cardTwo_info, .cardFour_info{
     margin-top: 8px;
+    color:white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
 }
 header{
 
@@ -48,6 +53,9 @@ header{
     padding: 10px;
     margin: 20px 80px;
     
+}
+.header_title{
+    font-size: 1.5rem;
 }
 
 .navbar ul{
@@ -73,17 +81,19 @@ header{
 /* article top styling start */
 .top{
     display: flex;
+    align-items: stretch;
     margin: 20px 35px;
+    
 }
 .top_img{
     width: 40%;
-    height:100%;
-  
+    
 }
 .top_img img{
     position: absolute;
+    height: 270px;
 }
-.top_img span{
+.top_128gb{
     position: absolute;
     float:left;
     border: none;
@@ -130,8 +140,12 @@ header{
 .middle{
     margin: 20px 35px;
 }
+.middle_accesorios{
+    margin: 10px 0 10px 0;
+}
 .accesorios{
     display: flex;
+    gap: 20px;
     
 }
 .accesorios img{
@@ -140,14 +154,14 @@ header{
     height: 150px;
 }
 
-.cardTwo_btn{
+.cardTwo_info{
     background-color: red;
-    width:25%;
+    width:60px;
     justify-content: left;
 }
-.cardFour_btn{
+.cardFour_info{
     background-color: #0d6efd;
-    width:25%;
+    width:60px;
     justify-content: left;
 }
 /* bottom article styling start */
@@ -199,3 +213,13 @@ footer p{
 /* @media (min-width: 768px) and (max-width: 1023px) {
     /* Estas reglas solo aplicarán a tamaños entre 768px y 1023px */
 /* } */
+/* @media screen and (max-width:480px){
+.top{
+    flex-direction: column;
+    margin: 0;
+}
+.accesorios{
+    flex-direction: column;
+    margin: 0;
+}
+} */
