@@ -1,0 +1,15 @@
+.header-superior{
+    display: flex;
+    justify-content: space-between;
+}
+.header-nav{
+    display: flex;
+}
+.header-nav-link a{
+    text-decoration: none;
+    padding: 4px;
+    color:#000;
+}
+.header-mid{
+
+}
