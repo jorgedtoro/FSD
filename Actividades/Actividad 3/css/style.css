@@ -26,9 +26,12 @@ main{
     border: 1px solid lightgray;
     display: flex;
     flex-direction: column;
-    
+   
     padding: 15px;
-    width: 25%;
+    margin-left: 10px;
+}
+.cardOne{
+    margin-left: 0px;
 }
 
 .card_p {
@@ -81,28 +84,28 @@ header{
 /* article top styling start */
 .top{
     display: flex;
-    align-items: stretch;
+    position: relative;
+    /* align-items: stretch; */
     margin: 20px 35px;
     
 }
 .top_img{
-    width: 40%;
+    flex-grow: 2;
     
 }
-.top_img img{
-    position: absolute;
-    height: 270px;
-}
+
 .top_128gb{
     position: absolute;
-    float:left;
+    top:20px;
+    left: 20px;
     border: none;
     background-color: green;
     color: white;
     padding: 6px;
 }
 .top_text{
-    width: 60%;
+    flex-grow: 2;
+    padding: 10px;
 }
 .top_text span{
     color: red;
@@ -139,13 +142,15 @@ header{
 /* middle article styling start */
 .middle{
     margin: 20px 35px;
+    
 }
 .middle_accesorios{
     margin: 10px 0 10px 0;
 }
 .accesorios{
     display: flex;
-    gap: 20px;
+    flex-grow: 1;
+    /* gap: 20px; */
     
 }
 .accesorios img{
