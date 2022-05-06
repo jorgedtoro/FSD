@@ -9,19 +9,154 @@
       src="https://kit.fontawesome.com/e524af45b4.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="style2.css" />
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/style2.css" />
   </head>
   <body>
-    <header class="navigation">
-      <h1 class="navigation_title">agoodshop</h1>
-      <nav class="navbar">
-        <ul class="navbar_items">
-          <li><a href="index.html">Tienda</a></li>
-          <li><a href="accesorios.html">Accesorios</a></li>
-          <li><a href="soporte.html">Soporte</a></li>
-          <li class="activateItem"><a href="contacto.html">Contactar</a></li>
-        </ul>
-      </nav>
-    </header>
+    <div class="wrapper">
+      <header class="navigation">
+        <h1 class="navigation_title">agoodshop</h1>
+        <nav class="navbar">
+          <ul class="navbar_items">
+            <li class="navbar_items_li">
+              <a class="navbar_items_a" href="../html/index2.html"> Tienda </a>
+            </li>
+            <li class="navbar_items_li">
+              <a class="navbar_items_a" href="../html/accesorios.html">
+                Accesorios
+              </a>
+            </li>
+            <li class="navbar_items_li">
+              <a class="navbar_items_a" href="../html/soporte.html">
+                Soporte
+              </a>
+            </li>
+            <li class="navbar_items_li">
+              <a
+                class="navbar_items_a activateItem"
+                href="../html/contacto.html"
+              >
+                Contactar
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <article class="top">
+          <div class="top-w-img">
+            <span class="top_span">128gb</span>
+            <img src="../images/fondo_gris.png" class="top_img" alt="" />
+          </div>
+          <div class="top_w_text">
+            <span class="top_text_span">oferta</span>
+            <h2 class="top_text_tittle">Compra un iFhone 13 Pro</h2>
+            <p>
+              iFhone 13: Tu nuevo superpoder. Nuestro sistema de cámara dual más
+              avanzado. El chip que hace morder el polvo a la competencia. Un
+              subidón de autonomía que vaya si notarás. Ceramic Shield, más duro
+              que cualquier vidrio de smartphone.
+            </p>
+            <p>
+              Pantalla Super Retina XDR de 6,1 pulgadas. Diseño robusto con
+              bordes planos y resistente al agua.
+            </p>
+            <div class="top_price">
+              <span class="top_price_price">938.99€</span>
+              <button class="top_price_btn btn">Comprar</button>
+            </div>
+            <div class="top_services">
+              <i class="fa-solid fa-store"></i>
+              <p>Envío rápido, gratuito y sin contacto</p>
+              <i class="fa-solid fa-arrow-rotate-right"></i>
+              <p>Devoluciones fáciles y gratuitas</p>
+              <i class="fa-solid fa-file-invoice-dollar"></i>
+              <p>Posibilidad de pago a plazos</p>
+            </div>
+          </div>
+        </article>
+        <article class="middle">
+          <h2 class="middle_title">Accesorios recomendados</h2>
+          <div class="middle-w-cards">
+            <div class="card_one">
+              <img src="../images/fondo_gris.png" class="card_image" alt="" />
+              <h3 class="card_title">Cargador</h3>
+              <p class="card_p">
+                El adaptador de corriente USB-C de 20 W es muy rápido y
+                eficiente, así que va de perlas para cargar tus dispositivos en
+                cualquier lugar.
+              </p>
+            </div>
+            <div class="card_two">
+              <img src="../images/fondo_gris.png" class="card_image" alt="" />
+              <h3 class="card_title">Base de carga inalámbrica</h3>
+              <span class="card_two_info">Oferta</span>
+              <p class="card_p">
+                Sistema de soporte para que sigas usando tu smartphone
+                cómodamente mientras lo cargas. Compatible con carga rápida de
+                20W.
+              </p>
+            </div>
+            <div class="card_three">
+              <img src="../images/fondo_gris.png" class="card_image" alt="" />
+              <h3 class="card_title">Funda piel</h3>
+              <p class="card_p">
+                Fabricadas en piel europea curtida y teñida con un proceso
+                especial, son suaves al tacto y adquieren un tono natural con el
+                tiempo. Los botones de aluminio combinan a la perfección con el
+                acabado de la piel.
+              </p>
+            </div>
+            <div class="card_four">
+              <img src="../images/fondo_gris.png" class="card_image" alt="" />
+              <h3 class="card_title">Cargador</h3>
+              <span class="card_four_info">Nuevo</span>
+              <p class="card_p">
+                El adaptador de corriente USB-C de 20 W es muy rápido y
+                eficiente, así que va de perlas para cargar tus dispositivos en
+                cualquier lugar
+              </p>
+            </div>
+          </div>
+        </article>
+        <aside class="bottom">
+          <div class="bottom_left">
+            <h3 class="bottom_left_title">
+              Participa en el sorteo de un iPhone 13
+            </h3>
+            <p>
+              Este verano, ¡venimos cargados de premios! Así que antes de irte
+              de vacaciones, ¡participa en nuestro sorteo! y podrás llevarte un
+              regalo increíble como un nuevo iFhone 13
+            </p>
+            <p>Rellena este formulario para ser uno de los afortunados.</p>
+          </div>
+          <div class="bottom_right">
+            <form action="#" class="bottom_right_form">
+              <label for="name" class="label_name">Nombre</label>
+              <input
+                type="text"
+                id="name"
+                placeholder="Ari Gold"
+                class="input_name"
+                required
+              />
+              <label for="mail" class="label_email">Email</label>
+              <input
+                type="email"
+                id="mail"
+                placeholder="arigold@mga.com"
+                class="input_email"
+                required
+              />
+              <button type="submit" class="form_btn btn">Enviar</button>
+            </form>
+          </div>
+        </aside>
+      </main>
+      <footer>
+        <p><span>©</span>agoodshop</p>
+      </footer>
+    </div>
   </body>
 </html>
