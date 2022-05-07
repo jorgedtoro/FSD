@@ -7,7 +7,7 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
-    height: 100vh;
+    
 }
 main{
     margin: 20px 80px;
@@ -22,79 +22,84 @@ main{
     padding: 8px;
 }
 
-.cardOne, .cardTwo, .cardThree, .cardFour{
-    border: 1px solid lightgray;
+.card_w{
     display: flex;
     flex-direction: column;
-   
+    border: 1px solid lightgray;
+    border-radius: 6px;
     padding: 15px;
-    margin-left: 10px;
+    margin-bottom: 10px;
 }
-.cardOne{
-    margin-left: 0px;
+
+.card_img {
+    margin-bottom: 10px;
+    width: 90%;
+    height: 150px;
 }
 
 .card_p {
     margin-top: 15px;
 }
 
-.cardTwo_info, .cardFour_info{
+.card_info, .card_info{
     margin-top: 8px;
     color:white;
     border: none;
     border-radius: 4px;
     padding: 8px;
 }
-header{
+.header{
 
     border-bottom: 1px solid lightgrey;
 }
 /* navbar styling start */
-.header{
+.navigation{
     display: flex;
     justify-content: space-between;
-    padding: 10px;
-    margin: 20px 80px;
+    padding: 5px;
+    margin: 5px 80px 0px 0px;
+    align-items: center;
     
 }
-.header_title{
+.navigation_title{
     font-size: 1.5rem;
+    padding: 10px;
+    margin-left: 100px;
 }
 
-.navbar ul{
+.navbar_items{
     list-style: none;
     display: flex;
-    /* justify-self: right; */
+  
     
 }
-.navbar_items li{
+.navbar_items_list{
     margin:10px
 }
-.navbar_items a{
+.navbar_items_a{
     text-decoration: none;
     color: black;
-}
-.navbar_items a:hover{
-    border: 1px solid lightgrey;
     padding: 10px;
+}
+.navbar_items_a:hover{
+    border: 1px solid lightgrey;
     border-radius: 6px;
     box-shadow: 0px 0.5px lightgrey;
 }
 
 /* article top styling start */
+
 .top{
     display: flex;
+    flex-direction: column;
     position: relative;
-    /* align-items: stretch; */
+   
     margin: 20px 35px;
     
 }
-.top_img{
-    flex-grow: 2;
-    
-}
 
-.top_128gb{
+
+.top_img_info{
     position: absolute;
     top:20px;
     left: 20px;
@@ -103,21 +108,28 @@ header{
     color: white;
     padding: 6px;
 }
-.top_text{
-    flex-grow: 2;
-    padding: 10px;
+
+.top_w_right{
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    
 }
-.top_text span{
+
+.top_right_text_info{
     color: red;
     text-transform: uppercase;
     font-weight:700;
     font-size: 1rem;  
 }
-.top h2{
-    margin-top: 2px;
+.top_right_text_title{
+    margin-top: 10px;
     margin-bottom: 10px;
 }
-.price{
+.top_right_text_p{
+    padding-top: 10px;
+}
+.top_w_price{
     display: flex;
 }
 .price_p{
@@ -130,16 +142,18 @@ header{
     margin: 15px 15px 10px 0px;
 
 }
-.services{
+.top_w_services{
     display: flex;
     margin-top: 10px;
     align-items: center;
     
 }
-.services i,p{
+.top_w_services i,p{
     margin-right: 15px;
 }
+
 /* middle article styling start */
+
 .middle{
     margin: 20px 35px;
     
@@ -149,51 +163,69 @@ header{
 }
 .accesorios{
     display: flex;
-    flex-grow: 1;
-    /* gap: 20px; */
+    flex-direction: column;
+    
     
 }
-.accesorios img{
-    margin-bottom: 10px;
-    width: 90%;
-    height: 150px;
+.card_one {
+    margin-left: 0px;
 }
 
-.cardTwo_info{
+
+
+.card_two_info{
     background-color: red;
     width:60px;
     justify-content: left;
 }
-.cardFour_info{
+.card_four_info{
     background-color: #0d6efd;
     width:60px;
     justify-content: left;
 }
+
 /* bottom article styling start */
+
 .bottom{
     background-color: rgba(146, 200, 247,0.25);
     display: flex;
-    margin: 20px 35px;
-    padding: 25px;
-    justify-content: space-around;
-}
-.columnLeft{
-   
-    width: 50%;
-}
-.columnLeft h2{
-    font-size: 2.5rem;
-}
-
-form{
-    display: flex;
     flex-direction: column;
+    margin: 20px 35px;
+    padding: 10px;
+    
 }
-form label{
+/* bottom left styling */
+.column_left{
+   display: flex;
+   flex-direction: column;
+   padding: 10px;
+
+}
+.column_left_title{
+    font-size: 2.5rem;
     margin-bottom: 10px;
 }
-form input{
-    border: 1px solid lightgray;;
+.column_left_p{
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.column_right{
+    padding: 10px;
+}
+/* bottom right styling */
+
+
+.column_right_form{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.form_label{
+    margin-bottom: 10px;
+}
+.form_input{
+    border: 1px solid lightgray;
     border-radius: 6px;
     padding: 10px;
     margin-bottom: 10px;
@@ -203,17 +235,52 @@ form input{
     justify-content: center;
     background-color: #0d6efd;
 }
+
 /* footer styling start */
-footer{
+
+.footer{
     border-top: 1px solid lightgrey;
     display: flex;
     justify-content: center;
 }
-footer p{
+.footer_p{
     font-weight: 700;
     padding: 5px;
 }
 /* media queries */
+
+/* mobile first */
+
+@media (min-width: 768px){
+    .top, .accesorios, .bottom{
+        flex-direction: row;
+    }
+    .card_w{
+        margin-right: 10px;
+        flex-basis: 25%;
+    }
+    .bottom{
+        padding: 25px;
+        justify-content: space-around;
+    }
+    .card_four{
+        margin-right: 0px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* And */
 /* @media (min-width: 768px) and (max-width: 1023px) {
     /* Estas reglas solo aplicarán a tamaños entre 768px y 1023px */
