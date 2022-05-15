@@ -1,6 +1,4 @@
-{
-  "currency": "€",
-  "products": [
+[
     {
       "SKU": "0K3QOSOV4V",
       "title": "iFhone 13 Pro",
@@ -16,5 +14,4 @@
       "title": "Funda de piel",
       "price": "79.99"
     }
-  ]
-}
+]
