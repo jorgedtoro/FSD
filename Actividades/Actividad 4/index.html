@@ -30,9 +30,9 @@
     </header>
     <main class="container">
       <!-- product table -->
-      <div class="row align-items-start">
+      <div class="row align-items-start p-4 m-20">
         <div class="col-8">
-          <table class="table">
+          <table class="table" id="table">
             <thead>
               <tr>
                 <th scope="col">Producto</th>
@@ -49,14 +49,13 @@
         </div>
         <!-- carrito -->
         <div class="col-4">
-          <article class="carrito bg-light">
+          <article class="carrito flex-column bg-light p-4">
             <h1>Total</h1>
-            <div class="productos">
-              <div class="productos_first"></div>
+            <div class="productos d-flex justify-content-between">
               <p>iFhone 13 Pro</p>
               <p>2816,97€</p>
             </div>
-            <div class="total">
+            <div class="total d-flex justify-content-between">
               <h2>Total</h2>
               <p>5820€</h2>
             </div>
@@ -65,16 +64,16 @@
       </div>
     </main>
     
-    <template class="template_product" id="pruebatemplate_product">
-       <tr>
+    <template class="template_product" id="template_product_id">
+       <tr class="template_product_row" id="template_product_row_id">
           <th scope="row" id="prueba_product">
             <h2 id="product__title">iFhone 13 Pro</h2>
             <p class="fs-6 fw-light" id="product__sku">Ref: 0K3QOSOV4V</p>
           </th>
           <td>
-            <button class="btn">-</button>
+            <button class="btn" id="btn_minus">-</button>
             <span class="border border-secondary rounded-2 py-2 px-4">0</span>
-            <button class="btn">+</button>
+            <button class="btn" id="btn_add">+</button>
           </td>
           <td id="product__price">938,99€</td>
           <td id="product__total">2816,97€</td>
