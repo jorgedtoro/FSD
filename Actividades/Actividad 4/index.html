@@ -47,7 +47,7 @@
             </tbody>
           </table>
         </div>
-        <!-- carrito -->
+        <!-- CARRITO -->
         <div class="col-4">
           <article class="carrito flex-column bg-light p-4">
             <h1>Total</h1>
@@ -62,8 +62,10 @@
           </article>
         </div>
       </div>
+      
     </main>
     
+    <!-- TEMPLATE PARA PRODUCTOS DE LA TIENDA -->
     <template class="template_product" id="template_product_id">
        <tr class="template_product_row" id="template_product_row_id">
           <th scope="row" id="prueba_product">
@@ -71,9 +73,9 @@
             <p class="fs-6 fw-light" id="product__sku">Ref: 0K3QOSOV4V</p>
           </th>
           <td>
-            <button class="btn" id="btn_minus">-</button>
-            <span class="border border-secondary rounded-2 py-2 px-4">0</span>
-            <button class="btn" id="btn_add">+</button>
+            <button class="btn btn-danger" id="btn_minus">-</button>
+            <span class="border border-secondary rounded-2 py-2 px-4 quantity">0</span>
+            <button class="btn btn-info" id="btn_add">+</button>
           </td>
           <td id="product__price">938,99€</td>
           <td id="product__total">2816,97€</td>
