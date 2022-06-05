@@ -55,7 +55,7 @@ const setCarrito = (item) => {
     id: item.querySelector("button").dataset.id,
     cantidad: 1,
   };
-  console.log(producto);
+  // console.log(producto);
   //si ya existe el producto le sumamos 1 a la cantidad y no lo creamos de nuevo.
   if (carrito.hasOwnProperty(producto.id)) {
     producto.cantidad = carrito[producto.id].cantidad + 1;
@@ -122,5 +122,24 @@ const pintarFooter = () => {
 const btnAccion = (e) => {
   // const btnSumar = document.querySelectorAll(".btn-info");
   // const btnRestar = document.querySelectorAll(".btn-danger");
-  console.log(e.target);
+  //sumar cantidad
+  if (e.target.classList.contains("btn-info")) {
+    const producto = carrito[e.target.dataset.id];
+    producto.cantidad = carrito[e.target.dataset.id].cantidad + 1;
+    //producto.cantidad++; //linea de arriba simplificada.
+    carrito[e.target.dataset.id] = { ...producto };
+    pintarCarrito();
+  }
+  //restar cantidad
+  if (e.target.classList.contains("btn-danger")) {
+    const producto = carrito[e.target.dataset.id];
+    producto.cantidad--;
+    if (producto.cantidad === 0) {
+      delete carrito[e.target.dataset.id];
+    }
+
+    pintarCarrito();
+  }
+
+  e.stopPropagation();
 };
