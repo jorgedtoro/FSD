@@ -9,7 +9,13 @@ const producto = document.querySelector("tr").content;
 const url = "http://jsonblob.com/api/973862124204081152";
 // Traer productos de la base de datos json
 const fetchData = async () => {
+<<<<<<< Updated upstream
   const res = await fetch(url);
+=======
+  const res = await fetch(
+    "http://jsonblob.com/api/jsonBlob/973862124204081152"
+  ); // http://jsonblob.com/973862124204081152.
+>>>>>>> Stashed changes
   const data = await res.json();
   //console.log(data);
   pintaDatos(data);
