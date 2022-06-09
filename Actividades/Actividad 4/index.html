@@ -42,7 +42,7 @@
               </tr>
             </thead>
             <tbody id="body_products">
-              <!-- aquí se recogen los productos desde el data.json -->
+              <!-- aquí se recogen los productos de la API -->
               <!-- los creamos desde app.js usando un template -->
             </tbody>
           </table>
@@ -51,9 +51,8 @@
         <div class="col-4">
           <article class="carrito flex-column bg-light p-4">
             <h1>Total</h1>
-            <div class="productos d-flex justify-content-between">
-              <p>iFhone 13 Pro</p>
-              <p>2816,97€</p>
+            <div class="productos d-flex justify-content-between" id="productsCarrito">
+              <!-- Aquí van los productos del carrito -->
             </div>
             <div class="total d-flex justify-content-between">
               <h2>Total</h2>
@@ -77,14 +76,15 @@
             <span class="border border-secondary rounded-2 py-2 px-4 quantity">0</span>
             <button class="btn btn-info" id="btn_add">+</button>
           </td>
-          <td id="product__price">938,99€</td>
-          <td id="product__total">2816,97€</td>
+          <td class="product__price" id="product__price">938,99€</td>
+          <td class ="product__total" id="product__total">2816,97€</td>
       </tr>
       
     </template>
-    <template class="producto">
-      <p class="producto__title">Descripción producto</p>
-      <p class="producto__total">Total €</p>
+    <!-- TEMPLATE CARRITO -->
+    <template class="template__carrito">
+      <p class="carrito__producto__title">Descripción producto</p>
+      <p class="carrito__producto__total">Total €</p>
     </template>
 
 

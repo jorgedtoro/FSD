@@ -1,0 +1,20 @@
+.accordion {
+
+}
+
+.accordion--open .accordion__content {
+    display: block;
+}
+
+.accordion__header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.accordion__button {
+    background: none;
+}
+
+.accordion__content {
+    display: none;
+}
