@@ -68,11 +68,8 @@ btnAdd = (p) => {
   templateTotal.innerText = total;
 
   //carrito
-  const tCarrito = document.querySelector("#productsCarrito");
-  tCarrito.innerHTML = `
-                        <p>${title}</p>
-                        <p>${total}</p>
-  `;
+  const carrito = new Carrito(title, price, total);
+  carrito.addCarrito(title, total);
 };
 // disminuir cantidad
 btnMinus = (p) => {
@@ -93,11 +90,19 @@ btnMinus = (p) => {
 };
 
 class Carrito {
-  constructor(description, total) {
+  constructor(description, price, total) {
     this.description = description;
+    this.price = price;
     this.total = total;
   }
-  addCarrito() {}
-  sumarTotal() {}
+  addCarrito() {
+    const carrito = document.querySelector("#productsCarrito");
+    carrito.innerHTML = `
+                        <p>${this.description}</p>
+                        <p>${this.total}</p>`;
+  }
+  sumarTotal(cantidad, price) {
+    return cantidad * price;
+  }
   vaciarcarrito() {}
 }
