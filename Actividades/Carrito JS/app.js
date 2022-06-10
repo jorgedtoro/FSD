@@ -44,6 +44,7 @@ const pintarCards = (data) => {
 //Agregar al carrito
 const addCarrito = (e) => {
   if (e.target.classList.contains("btn-dark")) {
+    //console.log(e.target.parentElement);
     setCarrito(e.target.parentElement);
   }
 };
