@@ -35,38 +35,49 @@ const pintarCarrito = () => {};
 // El evento DOMContentLoaded es disparado cuando el documento HTML ha sido completamente cargado y parseado
 document.addEventListener("DOMContentLoaded", (e) => {
   fetchData();
+  let carrito = new Carrito();
 });
 //eventos para los botones de añadir y quitar unidades.
 tbody.addEventListener("click", (e) => {
   if (e.target.classList.contains("btn-info")) {
     //const p = btnAdd(e.target.dataset.id);
-    const producto = e.target.parentElement;
-    console.log(producto);
+    const producto = e.target.closest(".template_product_row");
+    // console.log(producto);
+    // producto.actualizarUnidades();
+    // tbody.querySelector("span").innerText = producto.cantidad;
   }
   if (e.target.classList.contains("btn-danger")) {
-    const p = btnMinus(e.target.dataset.id);
+    //const p = btnMinus(e.target.dataset.id);
   }
 });
 
 //************************CLASE CARRITO**************************************** */
 
 class Carrito {
-  constructor(productos) {
-    this.id = productos.id;
-    this.title = productos.title;
-    this.sku = productos.SKU;
-    this.price = productos.price;
-    this.cantidad = productos.cantidad;
+  constructor(producto) {
+    this.id = producto.id;
+    this.sku = producto.SKU;
+    this.price = producto.price;
+    this.cantidad = 0;
   }
 
   actualizarUnidades(sku, unidades) {
     //Actualiza el nº de unidades que se quieren comprar del producto
+    //return this.cantidad++;
   }
+
   obtenerInformacionProducto(sku) {
     // Devuelve los datos de un producto además de las unidades seleccionadas
+    //habrá que usar un método como find... usando de búsqueda sku.
   }
   obtenerCarrito() {
     // Devuelve información de los productos añadidos al carrito
     // Además del total calculado de todos los productos
   }
 }
+
+//this.id = producto.querySelector(".btn").dataset.id;
+// this.title = producto.querySelector("#product__title").innerText;
+// this.sku = producto.querySelector("#product__sku").innerText;
+// this.price = producto.querySelector("#product__price").innerText;
+// this.cantidad = producto.querySelector("span").innerText;
