@@ -35,7 +35,6 @@ const pintarCarrito = () => {};
 // El evento DOMContentLoaded es disparado cuando el documento HTML ha sido completamente cargado y parseado
 document.addEventListener("DOMContentLoaded", (e) => {
   fetchData();
-  let carrito = new Carrito();
 });
 //eventos para los botones de añadir y quitar unidades.
 tbody.addEventListener("click", (e) => {
@@ -63,7 +62,10 @@ class Carrito {
 
   actualizarUnidades(sku, unidades) {
     //Actualiza el nº de unidades que se quieren comprar del producto
-    //return this.cantidad++;
+    if (carrito.hasOwnProperty(producto.sku)) {
+      producto.cantidad = carrito[producto.sku].cantidad + 1;
+    }
+    carrito[producto.id] = { ...producto };
   }
 
   obtenerInformacionProducto(sku) {
