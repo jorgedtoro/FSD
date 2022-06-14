@@ -22,8 +22,8 @@ class Carrito {
 
   actualizarUnidades(producto) {
     //Actualiza el nº de unidades que se quieren comprar del producto
-    const nuevaCantidad = Number(producto.cantidad) + 1;
-    return (this.productos[producto.cantidad] = nuevaCantidad);
+    // const nuevaCantidad = Number(producto.cantidad) + 1;
+    // return (this.productos[producto.cantidad] = nuevaCantidad);
   }
 
   obtenerInformacionProducto(sku) {
