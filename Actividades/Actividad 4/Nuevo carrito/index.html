@@ -69,11 +69,11 @@
        <tr class="template_product_row" id="template_product_row_id">
           <th scope="row" id="prueba_product">
             <h2 id="product__title">iFhone 13 Pro</h2>
-            <p class="fs-6 fw-light" id="product__sku">Ref: 0K3QOSOV4V</p>
+            <p class="fs-6 fw-light">Ref: <span id="product__sku">0K3QOSOV4V</span></p>
           </th>
           <td>
             <button class="btn btn-danger" id="btn_minus">-</button>
-            <span class="border border-secondary rounded-2 py-2 px-4 quantity">0</span>
+            <span class="border border-secondary rounded-2 py-2 px-4" id="quantity">0</span>
             <button class="btn btn-info" id="btn_add">+</button>
           </td>
           <td class="product__price" id="product__price">938,99€</td>
@@ -83,8 +83,8 @@
     </template>
     <!-- TEMPLATE CARRITO -->
     <template class="template__carrito">
-      <p class="carrito__producto__title">Descripción producto</p>
-      <p class="carrito__producto__total">Total €</p>
+      <p class="carrito__producto__title" id="carrito__producto__title">Descripción producto</p>
+      <p class="carrito__producto__total" id="carrito__producto__total">Total €</p>
     </template>
 
 
