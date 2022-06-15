@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul id="libreria"></ul>
+
+    <p>Peso total: <span id="pesoTotal"></span></p>
+
+    <form id="nuevoLibro">
+        <div>
+            <label for="titulo">
+                Titulo:
+            </label>
+            <input type="text" id="titulo" name="titulo">
+        </div>
+        <div>
+            <label for="genero">
+                Genero:
+            </label>
+            <input type="text" id="genero" name="genero">
+        </div>
+        <div>
+            <label for="autor">
+                Autor:
+            </label>
+            <input type="text" id="autor" name="autor">
+        </div>
+        <div>
+            <label for="isbn">
+                ISBN:
+            </label>
+            <input type="text" id="isbn" name="isbn">
+        </div>
+        <div>
+            <label for="peso">
+                Peso:
+            </label>
+            <input type="text" id="peso" name="peso">
+        </div>
+        <input type="submit" value="Guardar">
+    </form>
+
+    <script src="listadoLibros.js"></script>
+    <script src="libreria.js"></script>
+    <script src="libro.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

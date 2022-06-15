@@ -51,48 +51,63 @@
         <div class="col-4">
           <article class="carrito flex-column bg-light p-4">
             <h1>Total</h1>
-            <div class="productos d-flex justify-content-between" id="productsCarrito">
+            <div class="productos d-flex flex-column" id="productosCarrito">
               <!-- Aquí van los productos del carrito -->
             </div>
-            <div class="total d-flex justify-content-between">
-              <h2>Total</h2>
-              <p>5820€</h2>
+            <!-- CARRITO FOOTER -->
+            <div
+              class="total d-flex justify-content-between"
+              id="footerCarrito"
+            >
+              <!-- Aquí va el total € del carrito. -->
             </div>
           </article>
         </div>
       </div>
-      
     </main>
-    
+
     <!-- TEMPLATE PARA PRODUCTOS DE LA TIENDA -->
     <template class="template_product" id="template_product_id">
-       <tr class="template_product_row" id="template_product_row_id">
-          <th scope="row" id="prueba_product">
-            <h2 id="product__title">iFhone 13 Pro</h2>
-            <p class="fs-6 fw-light">Ref: <span id="product__sku">0K3QOSOV4V</span></p>
-          </th>
-          <td>
-            <button class="btn btn-danger" id="btn_minus">-</button>
-            <span class="border border-secondary rounded-2 py-2 px-4" id="quantity">0</span>
-            <button class="btn btn-info" id="btn_add">+</button>
-          </td>
-          <td class="product__price" id="product__price">938,99€</td>
-          <td class ="product__total" id="product__total">2816,97€</td>
+      <tr class="template_product_row" id="template_product_row_id">
+        <th scope="row" id="prueba_product">
+          <h2 id="product__title">iFhone 13 Pro</h2>
+          <p class="fs-6 fw-light">
+            Ref: <span id="product__sku">0K3QOSOV4V</span>
+          </p>
+        </th>
+        <td>
+          <button class="btn btn-danger" id="btn_minus">-</button>
+          <span
+            class="border border-secondary rounded-2 py-2 px-4"
+            id="quantity"
+            >0</span
+          >
+          <button class="btn btn-info" id="btn_add">+</button>
+        </td>
+        <td class="product__price" id="product__price">938,99€</td>
+        <td class="product__total" id="product__total">2816,97€</td>
       </tr>
-      
     </template>
     <!-- TEMPLATE CARRITO -->
-    <template class="template__carrito">
-      <p class="carrito__producto__title" id="carrito__producto__title">Descripción producto</p>
-      <p class="carrito__producto__total" id="carrito__producto__total">Total €</p>
+    <template class="template__carrito" id="template__carrito">
+      <div class="d-flex flex-row justify-content-between">
+        <p class="carrito__producto__title" id="carrito__producto__title">
+          Descripción producto
+        </p>
+        <p class="carrito__producto__total" id="carrito__producto__total">
+          Total €
+        </p>
+      </div>
+    </template>
+    <!-- FOOTER CARRITO -->
+    <template id="template__carrito__footer">
+      <h3>Total</h3>
+      <p id="carritoFooter__total">5.820€</p>
     </template>
 
-
-
-
-
-
     <!-- js script -->
-    <script src="scripts.js"></script>
+    <script src="./JS/carrito.js"></script>
+    <script src="./JS/producto.js"></script>
+    <script src="./JS/scripts.js"></script>
   </body>
 </html>
