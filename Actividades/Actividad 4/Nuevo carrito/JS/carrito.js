@@ -44,4 +44,5 @@ class Carrito {
     const totalValorF = totalValor.toFixed(2) + "€";
     return totalValorF;
   }
+  totalCarrito() {}
 }

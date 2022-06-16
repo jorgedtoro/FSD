@@ -78,11 +78,11 @@ document.addEventListener("DOMContentLoaded", (e) => {
       document.querySelector("#template__carrito").content;
     carritoEl.innerHTML = "";
     carrito.obtenerCarrito().forEach((producto) => {
-      //console.log(producto.getTitle());
+      //console.log(producto);
       templateCarrito.querySelector("#carrito__producto__title").textContent =
         producto.getTitle();
       templateCarrito.querySelector("#carrito__producto__total").textContent =
-        producto.getPrice();
+        carrito.calculaTotal(producto);
 
       const clone = templateCarrito.cloneNode(true);
       fragment.appendChild(clone);
@@ -97,9 +97,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
       "#template__carrito__footer"
     ).content;
     footerCarritoEl.innerHTML = "";
-    const totalCarrito = carrito.calculaTotal();
+    const carritoF = carrito.obtenerCarrito();
+    console.log(carritoF);
     templateFooter.querySelector("#carritoFooter__total").textContent =
-      totalCarrito;
+      carrito.totalCarrito();
     const clone = templateFooter.cloneNode(true);
     fragment.appendChild(clone);
   };
