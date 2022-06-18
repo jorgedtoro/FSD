@@ -54,14 +54,16 @@
             <div class="productos d-flex flex-column" id="productosCarrito">
               <!-- Aquí van los productos del carrito -->
             </div>
-            <!-- CARRITO FOOTER -->
             <div
-              class="total d-flex justify-content-between"
+              class="total d-flex justify-content-between align-items-center border-top m-1 p-2"
               id="footerCarrito"
             >
+              <p class="text-uppercase">Total</p>
               <!-- Aquí va el total € del carrito. -->
+              <p class="fs-5" id="carrito__total">0€</p>
             </div>
           </article>
+          <!-- CARRITO FOOTER -->
         </div>
       </div>
     </main>
@@ -88,6 +90,7 @@
         <td class="product__total" id="product__total">2816,97€</td>
       </tr>
     </template>
+
     <!-- TEMPLATE CARRITO -->
     <template class="template__carrito" id="template__carrito">
       <div class="d-flex flex-row justify-content-between">
@@ -98,11 +101,6 @@
           Total €
         </p>
       </div>
-    </template>
-    <!-- FOOTER CARRITO -->
-    <template id="template__carrito__footer">
-      <h3>Total</h3>
-      <p id="carritoFooter__total">5.820€</p>
     </template>
 
     <!-- js script -->

@@ -1,10 +1,10 @@
 class Producto {
-  constructor({ id, SKU, title, price, cantidad }) {
+  constructor({ id, sku, title, price, cantidad }) {
     this.id = id;
-    this.SKU = SKU;
+    this.SKU = sku;
     this.title = title;
     this.price = Number(price);
-    this.cantidad = cantidad;
+    this.cantidad = cantidad + 1;
   }
   getID() {
     return this.id;

@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
   const fragment = document.createDocumentFragment(); //creamos un fragemnt para evitar el reflow.
   const tbody = document.getElementById("body_products");
   const carritoEl = document.getElementById("productosCarrito");
-  const footerCarritoEl = document.getElementById("footerCarrito");
+  const footerCarritoEl = document.getElementById("footerCarrito").content;
   //crea el template de los productos
   const pintarProductos = (data) => {
     data.products.forEach((item) => {
@@ -52,8 +52,63 @@ document.addEventListener("DOMContentLoaded", (e) => {
       );
       const cantidad = Number(tproducto.querySelector("#quantity").innerText);
 
-      const producto = new Producto(id, title, sku, price, cantidad);
-      console.log(producto);
+      const producto = new Producto({ id, title, sku, price, cantidad });
+
+      carrito.addProducto(producto);
+      tproducto.querySelector("#quantity").innerText = producto.cantidad;
+      tproducto.querySelector(".product__total").innerText =
+        producto.getTotal().toFixed(2) + "€";
+      const total = carrito.totalCarrito();
+      pintarCarrito();
+
+      //actualizamos el total del carrito
+      document.getElementById("carrito__total").innerText =
+        total.toFixed(2) + "€";
     }
   });
+
+  //evento para el boton de restar y luego eliminar un producto del carrito.
+  tbody.addEventListener("click", (e) => {
+    if (e.target.classList.contains("btn-danger")) {
+      const tproducto = e.target.closest(".template_product_row");
+      const sku = tproducto.querySelector("#product__sku").innerText;
+      const cantidad = Number(tproducto.querySelector("#quantity").innerText);
+
+      carrito.RestaUnidades(sku, cantidad);
+      const producto = carrito.existeProductoSku(sku);
+      tproducto.querySelector("#quantity").innerText = producto.cantidad;
+      if (producto.cantidad === 0) {
+        carrito.quitarProducto(sku);
+      }
+      //ya tenemos la nueva cantidad.Calculamos el nuevo total y pintamos el carrito.
+      tproducto.querySelector(".product__total").innerText =
+        producto.getTotal().toFixed(2) + "€";
+      const total = carrito.totalCarrito();
+      pintarCarrito();
+
+      //actualizamos el total del carrito
+      document.getElementById("carrito__total").innerText =
+        total.toFixed(2) + "€";
+    }
+  });
+
+  //crea el carrito en el DOM.
+  const pintarCarrito = () => {
+    const templateCarrito =
+      document.querySelector("#template__carrito").content;
+    carritoEl.innerHTML = "";
+    const productos = carrito.obtenerProductos();
+    productos.forEach((producto) => {
+      templateCarrito.querySelector("#carrito__producto__title").textContent =
+        producto.getTitle();
+      const totalProducto = producto.getCantidad() * producto.getPrice();
+      templateCarrito.querySelector("#carrito__producto__total").textContent =
+        totalProducto.toFixed(2) + "€";
+      const clone = templateCarrito.cloneNode(true);
+      fragment.appendChild(clone);
+    });
+    carritoEl.appendChild(fragment);
+  };
+
+  //evento para el boton de eliminar un producto del carrito.
 });

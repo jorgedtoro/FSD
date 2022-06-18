@@ -24,18 +24,14 @@ class Carrito {
   }
   RestaUnidades(sku, cantidad) {
     const productoModif = this.productos.find((s) => s.SKU === sku);
-    if (productoModif > 0) {
+    if (productoModif.cantidad > 0) {
       return (productoModif.cantidad = productoModif.cantidad - 1);
-    } else {
-      return this.quitarProducto(sku);
     }
   }
 
   quitarProducto(sku) {
-    const index = this.productos.findIndex((p) => p.getSKU() === sku);
-    if (index > -1) {
-      this.productos.splice(index, 1);
-    }
+    // elimina un producto del carrito
+    this.productos = this.productos.filter((producto) => producto.SKU !== sku);
   }
   totalCarrito() {
     return this.productos.reduce((acc, producto) => {
