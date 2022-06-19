@@ -1,3 +1,5 @@
+// Clase carrito de compras
+
 class Carrito {
   constructor(productos = []) {
     this.productos = productos;
@@ -6,10 +8,12 @@ class Carrito {
     if (!this.existeProducto(producto)) {
       this.productos.push(producto);
     } else {
+      //si existe el producto lo actualiza.
       return this.actualizaUnidades(producto.SKU, producto.cantidad);
     }
   }
   obtenerProductos() {
+    //obtenemos los productos del carrito
     return this.productos;
   }
   existeProducto(producto) {
@@ -34,6 +38,7 @@ class Carrito {
     this.productos = this.productos.filter((producto) => producto.SKU !== sku);
   }
   totalCarrito() {
+    //calcula el total del carrito
     return this.productos.reduce((acc, producto) => {
       return (acc = acc + producto.price * producto.cantidad);
     }, 0);

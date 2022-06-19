@@ -21,7 +21,7 @@ class Producto {
   getCantidad() {
     return this.cantidad;
   }
-  getTotal(tprice, cantidad) {
+  getTotal() {
     return this.price * this.cantidad;
   }
 }

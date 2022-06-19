@@ -2,7 +2,8 @@
 const url = "https://jsonblob.com/api/973862124204081152";
 const carrito = new Carrito();
 
-// El evento DOMContentLoaded es disparado cuando el documento HTML ha sido completamente cargado y parseado
+// El evento DOMContentLoaded es disparado cuando el documento HTML
+// ha sido completamente cargado y parseado
 document.addEventListener("DOMContentLoaded", (e) => {
   //recuperamos los productos de la API.
   const fetchData = async () => {
@@ -16,10 +17,12 @@ document.addEventListener("DOMContentLoaded", (e) => {
   const templateProduct = document.getElementById(
     "template_product_id"
   ).content;
-  const fragment = document.createDocumentFragment(); //creamos un fragemnt para evitar el reflow.
+  //creamos un fragemnt para evitar el reflow.
+  const fragment = document.createDocumentFragment();
   const tbody = document.getElementById("body_products");
   const carritoEl = document.getElementById("productosCarrito");
   const footerCarritoEl = document.getElementById("footerCarrito").content;
+
   //crea el template de los productos
   const pintarProductos = (data) => {
     data.products.forEach((item) => {
@@ -109,6 +112,4 @@ document.addEventListener("DOMContentLoaded", (e) => {
     });
     carritoEl.appendChild(fragment);
   };
-
-  //evento para el boton de eliminar un producto del carrito.
 });
