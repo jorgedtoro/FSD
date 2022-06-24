@@ -12,6 +12,15 @@ class Carrito {
       return this.sumaUnidades(producto.SKU);
     }
   }
+  addProductoInput(producto) {
+    if (!this.existeProducto(producto)) {
+      this.productos.push(producto);
+    } else {
+      //si existe el producto lo actualiza.
+      return this.actualizaUnidades(producto.SKU);
+    }
+  }
+
   obtenerProductos() {
     //obtenemos los productos del carrito
     return this.productos;

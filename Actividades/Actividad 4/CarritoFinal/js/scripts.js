@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
   const tbody = document.getElementById("body_products");
   const carritoEl = document.getElementById("productosCarrito");
   const footerCarritoEl = document.getElementById("footerCarrito").content;
+  const errorEl = document.querySelector("#error");
 
   //crea el template de los productos
   const pintarProductos = (data) => {
@@ -46,6 +47,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
   tbody.addEventListener("click", (e) => {
     //eventos para los botones de añadir y quitar unidades.
     if (e.target.classList.contains("btn-info")) {
+      //"si hay error lo quitamos"
+      errorEl.classList.add("d-none");
+
       const tproducto = e.target.closest(".template_product_row");
       //creo el objeto producto a partir del e.target
       const id = tproducto.querySelector(".btn").dataset.id;
@@ -54,11 +58,13 @@ document.addEventListener("DOMContentLoaded", (e) => {
       const price = Number(
         tproducto.querySelector("#product__price").innerText
       );
-      const cantidad = Number(tproducto.querySelector("#quantity").value);
+      let cantidad = Number(tproducto.querySelector("#quantity").value);
 
       const producto = new Producto({ id, title, sku, price, cantidad });
 
       carrito.addProducto(producto);
+
+      producto.actualizaUnidades(cantidad);
       tproducto.querySelector("#quantity").value = producto.cantidad;
       tproducto.querySelector(".product__total").innerText =
         producto.getTotal().toFixed(2) + "€";
@@ -71,6 +77,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
     }
     //evento para el boton de restar y luego eliminar un producto del carrito.
     if (e.target.classList.contains("btn-danger")) {
+      //"si hay error lo quitamos"
+      errorEl.classList.add("d-none");
+
       const tproducto = e.target.closest(".template_product_row");
       const sku = tproducto.querySelector("#product__sku").innerText;
       //const cantidad = Number(tproducto.querySelector("#quantity").value);
@@ -82,8 +91,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
         carrito.quitarProducto(sku);
       }
       //ya tenemos la nueva cantidad.Calculamos el nuevo total y pintamos el carrito.
+      const totalProducto = producto.getCantidad() * producto.getPrice();
       tproducto.querySelector(".product__total").innerText =
-        producto.getTotal().toFixed(2) + "€";
+        totalProducto.toFixed(2) + "€";
       const total = carrito.totalCarrito();
       pintarCarrito();
 
@@ -94,7 +104,11 @@ document.addEventListener("DOMContentLoaded", (e) => {
   });
 
   //EVENTO PARA CONTROLAR SI CAMBIAMOS EL VALOR DEL INPUT MANUALMENTE
+
   tbody.addEventListener("change", (e) => {
+    //"si hay error lo quitamos"
+    errorEl.classList.add("d-none");
+
     if (e.target.classList.contains("inputCantidad")) {
       const tproducto = e.target.closest(".template_product_row");
       //creo el objeto producto a partir del e.target
@@ -108,7 +122,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
       const producto = new Producto({ id, title, sku, price, cantidad });
       if (cantidad >= 0) {
-        carrito.addProducto(producto);
+        carrito.addProductoInput(producto);
 
         carrito.actualizaUnidades(sku, cantidad);
         tproducto.querySelector(".product__total").innerText =
@@ -116,11 +130,13 @@ document.addEventListener("DOMContentLoaded", (e) => {
         const total = carrito.totalCarrito();
 
         pintarCarrito();
+
         //actualizamos el total del carrito
         document.getElementById("carrito__total").innerText =
           total.toFixed(2) + "€";
       } else {
-        alert("introduzca un valor válido");
+        errorEl.innerText = "Error: Por favor, introduzca un valor válido";
+        errorEl.classList.remove("d-none");
         tproducto.querySelector("#quantity").value = 0;
 
         carrito.actualizaUnidades(sku, 0);

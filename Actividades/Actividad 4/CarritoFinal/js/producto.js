@@ -4,7 +4,10 @@ class Producto {
     this.SKU = sku;
     this.title = title;
     this.price = Number(price);
-    this.cantidad = cantidad + 1;
+    this.cantidad = cantidad;
+  }
+  actualizaUnidades(cantidad) {
+    return (this.cantidad = cantidad + 1);
   }
   getID() {
     return this.id;
