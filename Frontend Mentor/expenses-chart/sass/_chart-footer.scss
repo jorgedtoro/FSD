@@ -1,0 +1,36 @@
+.chart-footer{
+    display: flex;
+    flex-direction: row;
+    background-color: $color-white;
+    border-radius: 8px;
+    max-width: 100%;
+    justify-content: space-between;
+   
+    
+   
+&-columnLeft {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 50%;
+
+        &__title {
+            color: $color-medium-brown;
+        }
+
+        &__price {
+            font-size: 1.5rem;
+
+        }
+
+    }
+    &-columnRight {
+        flex-basis: 50%;
+        &__number{
+            font-size: 1.5rem;
+        }
+        &__info{
+            color: $color-medium-brown;
+        }
+        
+    }
+}

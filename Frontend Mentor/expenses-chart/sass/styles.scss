@@ -1,9 +1,13 @@
+//Variables
+@import "variables";
+
 
 // Chart-head
 @import "chart-head";
+@import "chart-footer";
+@import "chart-body";
 
 //Commons
 @import "commons";
 
-//Variables
-@import "variables";
+@import "normalize";

@@ -4,10 +4,11 @@
     justify-content: space-between;
     width: 300px;
     align-items: center;
-    background-color: hsl(10, 79%, 65%);
-    color: #ffffff;
+    background-color: $color-soft-red;
+    color: $color-white;
     border-radius: 8px;
     padding: 6px;
+    max-width: 100%;
 }
 .chart-head-columnLeft{
     display: flex;
