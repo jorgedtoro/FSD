@@ -42,8 +42,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
     tbody.appendChild(fragment);
   };
 
-  //eventos para los botones de añadir y quitar unidades.
+  //EVENTOS PARA CONTROLAR LOS BOTONES DE SUMA Y RESTA
   tbody.addEventListener("click", (e) => {
+    //eventos para los botones de añadir y quitar unidades.
     if (e.target.classList.contains("btn-info")) {
       const tproducto = e.target.closest(".template_product_row");
       //creo el objeto producto a partir del e.target
@@ -53,12 +54,12 @@ document.addEventListener("DOMContentLoaded", (e) => {
       const price = Number(
         tproducto.querySelector("#product__price").innerText
       );
-      const cantidad = Number(tproducto.querySelector("#quantity").innerText);
+      const cantidad = Number(tproducto.querySelector("#quantity").value);
 
       const producto = new Producto({ id, title, sku, price, cantidad });
 
       carrito.addProducto(producto);
-      tproducto.querySelector("#quantity").innerText = producto.cantidad;
+      tproducto.querySelector("#quantity").value = producto.cantidad;
       tproducto.querySelector(".product__total").innerText =
         producto.getTotal().toFixed(2) + "€";
       const total = carrito.totalCarrito();
@@ -68,18 +69,15 @@ document.addEventListener("DOMContentLoaded", (e) => {
       document.getElementById("carrito__total").innerText =
         total.toFixed(2) + "€";
     }
-  });
-
-  //evento para el boton de restar y luego eliminar un producto del carrito.
-  tbody.addEventListener("click", (e) => {
+    //evento para el boton de restar y luego eliminar un producto del carrito.
     if (e.target.classList.contains("btn-danger")) {
       const tproducto = e.target.closest(".template_product_row");
       const sku = tproducto.querySelector("#product__sku").innerText;
-      const cantidad = Number(tproducto.querySelector("#quantity").innerText);
+      //const cantidad = Number(tproducto.querySelector("#quantity").value);
 
-      carrito.RestaUnidades(sku, cantidad);
+      carrito.RestaUnidades(sku);
       const producto = carrito.existeProductoSku(sku);
-      tproducto.querySelector("#quantity").innerText = producto.cantidad;
+      tproducto.querySelector("#quantity").value = producto.cantidad;
       if (producto.cantidad === 0) {
         carrito.quitarProducto(sku);
       }
@@ -92,6 +90,47 @@ document.addEventListener("DOMContentLoaded", (e) => {
       //actualizamos el total del carrito
       document.getElementById("carrito__total").innerText =
         total.toFixed(2) + "€";
+    }
+  });
+
+  //EVENTO PARA CONTROLAR SI CAMBIAMOS EL VALOR DEL INPUT MANUALMENTE
+  tbody.addEventListener("change", (e) => {
+    if (e.target.classList.contains("inputCantidad")) {
+      const tproducto = e.target.closest(".template_product_row");
+      //creo el objeto producto a partir del e.target
+      const id = tproducto.querySelector(".btn").dataset.id;
+      const title = tproducto.querySelector("#product__title").innerText;
+      const sku = tproducto.querySelector("#product__sku").innerText;
+      const price = Number(
+        tproducto.querySelector("#product__price").innerText
+      );
+      const cantidad = Number(tproducto.querySelector("#quantity").value);
+
+      const producto = new Producto({ id, title, sku, price, cantidad });
+      if (cantidad >= 0) {
+        carrito.addProducto(producto);
+
+        carrito.actualizaUnidades(sku, cantidad);
+        tproducto.querySelector(".product__total").innerText =
+          producto.getTotal().toFixed(2) + "€";
+        const total = carrito.totalCarrito();
+
+        pintarCarrito();
+        //actualizamos el total del carrito
+        document.getElementById("carrito__total").innerText =
+          total.toFixed(2) + "€";
+      } else {
+        alert("introduzca un valor válido");
+        tproducto.querySelector("#quantity").value = 0;
+
+        carrito.actualizaUnidades(sku, 0);
+        tproducto.querySelector(".product__total").innerText =
+          producto.getTotal().toFixed(2) + "€";
+        const total = carrito.totalCarrito();
+        pintarCarrito();
+        document.getElementById("carrito__total").innerText =
+          total.toFixed(2) + "€";
+      }
     }
   });
 
