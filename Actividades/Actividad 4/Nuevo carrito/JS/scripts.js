@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
       pintarCarrito();
       //const totalCarrito = carrito.calculaTotal();
 
-      pintarFooter();
+      pintarFooter(producto);
     }
     if (e.target.classList.contains("btn-danger")) {
       //const p = btnMinus(e.target.dataset.id);
@@ -82,7 +82,11 @@ document.addEventListener("DOMContentLoaded", (e) => {
       templateCarrito.querySelector("#carrito__producto__title").textContent =
         producto.getTitle();
       templateCarrito.querySelector("#carrito__producto__total").textContent =
+<<<<<<< Updated upstream
         carrito.calculaTotal(producto);
+=======
+        producto.getCantidad();
+>>>>>>> Stashed changes
 
       const clone = templateCarrito.cloneNode(true);
       fragment.appendChild(clone);
@@ -92,6 +96,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
   };
 
   //crea el footer del carrito
+<<<<<<< Updated upstream
   const pintarFooter = () => {
     const templateFooter = document.querySelector(
       "#template__carrito__footer"
@@ -105,4 +110,20 @@ document.addEventListener("DOMContentLoaded", (e) => {
     fragment.appendChild(clone);
   };
   footerCarritoEl.appendChild(fragment);
+=======
+  // const pintarFooter = () => {
+  //   const templateFooter = document.querySelector(
+  //     "#template__carrito__footer"
+  //   ).content;
+  //   footerCarritoEl.innerHTML = "";
+
+  //obtenemos los productos del carrito y recogemos el total.
+  //const totalCarrito = carrito.calculaTotal();
+  //     templateFooter.querySelector("#carritoFooter__total").textContent =
+  //       totalCarrito;
+  //     const clone = templateFooter.cloneNode(true);
+  //     fragment.appendChild(clone);
+  //   };
+  //   footerCarritoEl.appendChild(fragment);
+>>>>>>> Stashed changes
 });
