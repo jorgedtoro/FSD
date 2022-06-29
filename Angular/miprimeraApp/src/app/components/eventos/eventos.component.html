@@ -1,0 +1,17 @@
+<div>
+  <!-- event biding -->
+  <input type="color" name="" id="" (input)="cambiarColor($event)" />
+  <!-- property biding -->
+  <div class="caja" [style]="'background-color:' + color"></div>
+</div>
+
+<div>
+  <select (change)="seleccionarCiudad($event)">
+    <option value="">Selecciona una ciudad</option>
+    <option value="Madrid">Madrid</option>
+    <option value="Londres">Londres</option>
+    <option value="NY">NY</option>
+    <option value="Roma">Roma</option>
+  </select>
+  <p>{{ frase }}</p>
+</div>
