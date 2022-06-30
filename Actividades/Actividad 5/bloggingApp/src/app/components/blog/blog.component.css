@@ -1,0 +1,24 @@
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1876D1;
+    color: white;
+    padding: 10px;
+    font-size: 1rem;
+}
+.navigation-logo-img{
+    width: 50%;
+}
+.navigation-title__h1{
+    font-size: 1.5rem;
+}
+.navigation-list{
+    display: flex;
+    gap:32px
+}
+.navigation-list__li{
+    
+    text-decoration: none;
+    list-style:none;
+}
