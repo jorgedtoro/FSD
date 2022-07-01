@@ -1,0 +1,19 @@
+<div class="form">
+  <h2>Formulario de alta</h2>
+  <div>
+    <label for="name">Introduce tu nombre</label>
+    <input type="text" id="name" [(ngModel)]="name">
+  </div>
+  <div>
+    <label for="phone">Introduce tu telefono</label>
+    <input type="number" id="phone" [(ngModel)]="phone">
+  </div>
+  <button (click)="guardarDatos()">GUARDAR</button>
+</div>
+<hr>
+<section>
+  <h2>Lista de contactos</h2>
+  <ul [innerHTML]="resultado">
+
+  </ul>
+</section>

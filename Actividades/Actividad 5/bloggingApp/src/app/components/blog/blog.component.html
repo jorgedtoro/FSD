@@ -27,6 +27,7 @@
         placeholder="Ari"
         class="form_input"
         required
+        [(ngModel)]="name"
       />
       <label for="apellidos" class="form_label">Apellidos</label>
       <input
@@ -35,11 +36,18 @@
         placeholder="Gold"
         class="form_input"
         required
+        [(ngModel)]="apellido"
       />
     </div>
     <div class="form-news-newsList">
       <label for="titulo" class="form_label">Título</label>
-      <input type="text" id="titulo" class="form_input" required />
+      <input
+        type="text"
+        id="titulo"
+        class="form_input"
+        required
+        [(ngModel)]="titulo"
+      />
       <label for="imagen" class="form_label">Imagen</label>
       <input
         type="url"
@@ -47,42 +55,25 @@
         placeholder="https://"
         class="form_input"
         required
+        [(ngModel)]="imagen"
       />
       <label for="noticia" class="form_label">Noticia</label>
-      <textarea name="textarea" rows="10" cols="50"></textarea>
+      <textarea
+        name="textarea"
+        rows="10"
+        cols="50"
+        [(ngModel)]="noticia"
+      ></textarea>
       <label for="fecha" class="form_label">Fecha publicación</label>
-      <input type="date" id="fecha" class="form_input" required />
-      <button type="submit" class="form_btn btn">Publicar</button>
+      <input
+        type="date"
+        id="fecha"
+        class="form_input"
+        required
+        [(ngModel)]="fecha"
+      />
+      <button (click)="addNew()" class="form_btn btn">Publicar</button>
     </div>
   </div>
 </article>
-<div class="listado-w">
-  <article class="listado-new">
-    <div class="new-img">
-      <img class="new-img__img" src="../../../assets/code-wrapper.png" alt="" />
-    </div>
-    <div class="new-title">Noticia 1</div>
-    <div class="new-content">
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae
-      inventore, nostrum, iusto voluptates numquam commodi, magnam libero illo
-      aliquid error fugiat molestiae sint iure recusandae? Quidem distinctio
-      impedit aut unde.
-    </div>
-    <div class="new-alumn"><span>Jorge </span> <span>de Toro</span></div>
-    <div class="new-date">30/06/2022</div>
-  </article>
-  <article class="listado-new">
-    <div class="new-img">
-      <img class="new-img__img" src="../../../assets/code-wrapper.png" alt="" />
-    </div>
-    <div class="new-title">Noticia 1</div>
-    <div class="new-content">
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae
-      inventore, nostrum, iusto voluptates numquam commodi, magnam libero illo
-      aliquid error fugiat molestiae sint iure recusandae? Quidem distinctio
-      impedit aut unde.
-    </div>
-    <div class="new-alumn"><span>Jorge </span> <span>de Toro</span></div>
-    <div class="new-date">30/06/2022</div>
-  </article>
-</div>
+<div class="listado-w" [innerHTML]="publicar"></div>

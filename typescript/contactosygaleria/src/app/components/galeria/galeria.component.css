@@ -1,0 +1,22 @@
+.galeria{
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.galeria figcaption{
+  text-align: center;
+  margin: 10px 0px;
+}
+
+img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+button{
+  width: 50%;
+  padding: 10px;
+}
