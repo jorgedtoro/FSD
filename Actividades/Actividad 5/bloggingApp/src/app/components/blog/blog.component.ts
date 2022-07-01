@@ -37,9 +37,11 @@ export class BlogComponent implements OnInit {
         <div class="new-img">
         <img class="new-img__img" src="${n.imagen}" alt="" />
         </div>
-        <div class="new-title">${n.titulo}</div>
+        <div class="new-title">
+          <h2 class="new-title__h2">${n.titulo}</h2>
+        </div>
         <div class="new-content">
-          ${n.noticia}
+          <p class="new-content__p">${n.noticia}</p>
         </div>
         <div class="new-alumn">
           <span>${n.nombre}</span> 

@@ -1,3 +1,5 @@
+
+/* BARRA DE NAVEGACIÓN */
 .navigation{
     display: flex;
     justify-content: space-between;
@@ -22,6 +24,8 @@
     text-decoration: none;
     list-style:none;
 }
+
+/* FORMULAIO */
 .form-w{
     display: flex;
     flex-direction: column;
@@ -61,6 +65,9 @@
     width: 40%;
     align-self: center;
 }
+
+/* LISTADO DE NOTICIAS */
+
 .listado-w{
     display: flex;
     flex-basis: 33%;
@@ -72,7 +79,11 @@
     justify-content: center;
     align-items: center;
 }
-.new-img__img{
-    max-width: 50%;
+.new-img__img {
+    max-width: 25%;
     border-radius: 3px;
+    
+}
+.new-alumn{
+    color: #1876D1;
 }
