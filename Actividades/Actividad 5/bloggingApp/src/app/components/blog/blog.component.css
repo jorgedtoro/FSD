@@ -71,6 +71,7 @@
     display: flex;
     flex-basis: 33%;
     margin: 10px;
+    flex-wrap: wrap;
 }
 .listad-new{
     display: flex;
@@ -79,7 +80,7 @@
     align-items: center;
 }
 .new-img__img {
-    max-width: 25%;
+    max-width: 50%;
     border-radius: 3px;
     
 }
