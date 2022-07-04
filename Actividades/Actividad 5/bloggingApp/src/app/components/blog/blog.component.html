@@ -1,21 +1,38 @@
 <nav class="navigation">
-  <div class="navigation-logo">
-    <img
-      class="navigation-logo-img"
-      src="https://cdn-images-1.medium.com/max/184/1*nbJ41jD1-r2Oe6FsLjKaOg@2x.png"
-      alt="logo Angular"
-    />
+  <div class="navigation-top">
+    <div class="navigation-logo">
+      <img
+        class="navigation-logo-img"
+        src="https://cdn-images-1.medium.com/max/184/1*nbJ41jD1-r2Oe6FsLjKaOg@2x.png"
+        alt="logo Angular"
+      />
+    </div>
+    <div class="navigation-title">
+      <h1 class="navigation-title__h1">Actividad 5. Blogging Angular</h1>
+    </div>
+    <div>
+      <ul class="navigation-list">
+        <li class="navigation-list__li">
+          <a href="https://blog.angular.io/" target="_blank">Blog</a>
+        </li>
+        <li class="navigation-list__li">
+          <a href="https://blog.angular.io/about" target="_blank">Acerca de</a>
+        </li>
+      </ul>
+    </div>
   </div>
-  <div class="navigation-title">
-    <h1 class="navigation-title__h1">Actividad 5. Blogging Angular</h1>
-  </div>
-  <div>
-    <ul class="navigation-list">
-      <li class="navigation-list__li">Blog</li>
-      <li class="navigation-list__li">Acerca de</li>
-    </ul>
+  <div class="navigation-bottom">
+    <div class="icons">
+      <i class="fa-brands fa-twitter"
+        ><a href="https://twitter.com/angular"></a
+      ></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-youtube"></i>
+    </div>
   </div>
 </nav>
+
+<div class="listado-w" [innerHTML]="publicar"></div>
 <article class="form-w">
   <h1>Formulario publicación noticias</h1>
   <div class="form-news" action="#">
@@ -76,4 +93,11 @@
     </div>
   </div>
 </article>
-<div class="listado-w" [innerHTML]="publicar"></div>
+<footer class="footer">
+  <ul class="footer-list">
+    <li>© Copyright</li>
+    <li>Master Full Stack</li>
+    <li>Contact</li>
+    <li>Releases</li>
+  </ul>
+</footer>

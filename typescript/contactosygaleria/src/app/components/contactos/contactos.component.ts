@@ -27,7 +27,7 @@ export class ContactosComponent implements OnInit {
 
   cargarDatos(): void {
     this.resultado = "";
-    this.arrContactos.forEach(contacto => this.resultado += `<li>${contacto.name} : ${contacto.phone}</li>`)
+    this.arrContactos.forEach(contacto => this.resultado += `<li class="lista">${contacto.name} : ${contacto.phone}</li>`)
 
   }
 

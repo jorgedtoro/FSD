@@ -2,8 +2,7 @@
 /* BARRA DE NAVEGACIÓN */
 .navigation{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    
     background-color: #1876D1;
     color: white;
     padding: 10px;
