@@ -11,147 +11,65 @@ body {
     
 }
 
-/* BARRA DE NAVEGACIÓN */
-.navigation{
-    display:flex;
-    flex-direction: column;
-    
-}
-.navigation-top {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items:center;
-    background-color: #1876D1;
-    color: white;
-    padding: 10px;
-    font-size: 1rem;
-    gap:12px;
-    
-}
-
-.navigation-logo-img {
-    width: 50%;
-}
-
-.navigation-title__h1 {
-    font-size: 1.5rem;
-}
-
-.navigation-list {
-    display: flex;
-    gap: 32px;
-}
-
-.navigation-list__li {
-    list-style: none;
-}
-.navigation-list__li a{
-    color: white;
-    text-decoration: none;
-}
-
-.navigation-bottom{
-    align-self: flex-end;
-}
-.icons{
-    display: flex;
-    gap:10px;
-}
-/* FORMULAIO */
-.form-w {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* width: 80%; */
-    margin: 20px;
-}
-
-.form-news-alumn {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-}
-
-.form-news-newsList {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-
-}
-
-.form-label {
-    margin-bottom: 5px;
-}
-
-.form_input {
-    border-radius: 6px;
-    border: 1px solid lightgray;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding: 8px;
-}
-
-.form_btn {
-    border-radius: 6px;
-    background-color: #1876D1;
-    border: none;
-    color: white;
-    padding: 5px;
-    margin: 5px;
-    width: 40%;
-    align-self: center;
-}
 
 /* LISTADO DE NOTICIAS */
 
 .listado-w {
     display: flex;
-    flex-basis: 33%;
-    gap: 10px;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 10px 20px;
 }
 
-.listad-new {
+.listado-new {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-basis: 25%;
 }
+.new-img{
+    height: 100%;
+ }
 
 .new-img__img {
     max-width: 100%;
     border-radius: 3px;
 
 }
-.new-title{
+
+.new-title {
+    height: 100%;
     margin: 10px 0;
 }
-.new-content__p{
+.new-title__h2{
     max-width: 100%;
+    height: 100%;
+}
+.new-content{
+    height: 100%;
+}
+.new-content__p {
+    max-width: 100%;
+    height: 100%;
     margin: 10px 0;
     color: #BABABA;
     text-align: justify;
-    
+
 }
+
 .new-alumn {
+    max-width: 100%;
     color: #1876D1;
     margin-bottom: 5px;
 }
-.new-date{
-    color:#757575;
+
+.new-date {
+    max-width: 100%;
+    color: #757575;
 }
 
-/* FOOTER */
-.footer-list{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 10px;
-    background-color: #1876D1;
-    color: white;
-    text-decoration: none;
-    list-style: none;
 
-}
+
