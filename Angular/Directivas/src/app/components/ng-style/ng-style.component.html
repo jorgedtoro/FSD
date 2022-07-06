@@ -1,0 +1,26 @@
+<p [ngStyle]="{ 'background-color': 'tomato', padding: '10px' }">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, magnam!
+  Molestias voluptate totam aperiam consequuntur dolorum at consequatur
+  asperiores delectus accusamus ipsum explicabo corrupti debitis quibusdam
+  tenetur, dolore itaque nulla?
+</p>
+
+<!-- Estilos dinámicos -->
+<div>
+  <label for="increaseText" class="label">Incrementa el texto</label>
+  <input
+    type="range"
+    name="increaseText"
+    id=""
+    min="10"
+    max="60"
+    step="5"
+    (input)="changeSize($event)"
+  />
+</div>
+<p [ngStyle]="{ 'background-color': color, 'font-size': size + 'px' }">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti laboriosam
+  excepturi ut sed, molestiae ipsum incidunt dolores animi harum doloribus
+  cumque. Velit molestias dolorum quia nesciunt adipisci, provident dolorem
+  labore.
+</p>

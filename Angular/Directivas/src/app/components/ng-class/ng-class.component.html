@@ -1,0 +1,12 @@
+<!-- podemos pasar un array de clases y así recorrerlo. -->
+<p [ngClass]="['fondoRojo', 'textoVerde']">ng-class works!</p>
+
+<div class="clases">
+  <p [ngClass]="{ fondoRojo: activo, fondoAzul: !activo }">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, labore
+    beatae. Magnam eligendi dicta cum necessitatibus voluptate beatae, inventore
+    incidunt consectetur dignissimos est impedit eaque non error aliquid illum
+    dolore.
+  </p>
+  <button (click)="cambiaEstado()">Cambia el fondo del párrafo</button>
+</div>
