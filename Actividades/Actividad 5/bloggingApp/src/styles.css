@@ -28,7 +28,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-basis: 25%;
+    flex-basis: calc(33% - 20px);
 }
 .new-img{
     height: 100%;
