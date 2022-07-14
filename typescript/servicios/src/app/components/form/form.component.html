@@ -1,0 +1,21 @@
+<div class="form">
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <label for="" class="text-white">Nombre</label>
+      <input class="form-control" type="text" [(ngModel)]="newAlumno.nombre">
+    </div>
+    <div class="col-12 col-md-6">
+      <label for="" class="text-white">Email</label>
+      <input class="form-control" type="text" [(ngModel)]="newAlumno.email">
+    </div>
+    <div class="col-12 col-md-6">
+      <label for="" class="text-white">Edad</label>
+      <input class="form-control" type="text" [(ngModel)]="newAlumno.edad">
+    </div>
+    <div class="col-12 col-md-6">
+      <label for="" class="text-white">Curso</label>
+      <input class="form-control" type="text" [(ngModel)]="newAlumno.curso">
+    </div>
+  </div>
+  <button class="btn btn-danger mt-3" (click)="recogerDatos()">Guardar</button>
+</div>

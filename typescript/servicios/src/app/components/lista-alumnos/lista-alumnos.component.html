@@ -1,0 +1,12 @@
+<section>
+  <h2>Listado de alumnos</h2>
+  <hr>
+  <app-filtros (cursoEmitido)="filtrarPorCurso($event)"></app-filtros>
+  <div class="row g-3">
+
+    <article class="col-12 col-md-6 col-lg-4" *ngFor="let alumno of alumnos">
+      <app-alumno [miAlumno]="alumno"></app-alumno>
+    </article>
+
+  </div>
+</section>
