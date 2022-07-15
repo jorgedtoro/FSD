@@ -1,0 +1,11 @@
+const arrAnimals = ['🐵','🐯','🦄','🦬','🦏'];
+
+function insertAtIndex(arr,index,newItem){
+  return [
+    ...arr.slice(0, index),newItem,...arr.slice(index)
+  ]
+}
+
+const animalWithTRex = insertAtIndex(arrAnimals,1,'🦖')
+
+console.log(animalWithTRex)
