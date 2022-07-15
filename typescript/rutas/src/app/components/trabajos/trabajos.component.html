@@ -1,0 +1,16 @@
+<section class="container mt-3">
+  <h1>Los servicios que nos diferencian</h1>
+  <hr>
+
+  <div class="row g-4">
+
+    <article class="col-12 col-md-6 col-lg-4" *ngFor="let trabajo of trabajos">
+      <div class="card p-4">
+        <h3>{{trabajo.titulo}}</h3>
+        <button class="btn btn-danger" [routerLink]="['/trabajo', trabajo.url]">ver detalle</button>
+      </div>
+    </article>
+
+  </div>
+
+</section>
