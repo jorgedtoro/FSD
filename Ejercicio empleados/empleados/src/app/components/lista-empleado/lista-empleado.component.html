@@ -8,12 +8,26 @@
         alt="Free unsplash image"
       />
       <div class="card-body">
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
+        <ul>
+          <li>
+            {{empleado.name}}  {{empleado.surname}}
+          </li>
+          <li>
+            {{empleado.email}}
+          </li>
+          <li>
+            {{empleado.department}}
+          </li>
+                   
+        </ul>
+        <div class="card-buttons d-flex p-2 gap-2">
+
+          <button class="btn btn-success">{{empleado.status}}</button>
+          <button class="btn btn-secondary" [routerLink]="['/empleado', empleado.id]">Detalle</button>
+        </div>
+        
       </div>
     </div>
   </div>
 </section>
-<button class="btn btn-primary">Home</button>
+<button class="btn btn-primary" [routerLink]="['/home']">Home</button>

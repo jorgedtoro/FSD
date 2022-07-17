@@ -5,12 +5,13 @@ import { EmpleadoComponent } from './components/empleado/empleado.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { ListaEmpleadoComponent } from './components/lista-empleado/lista-empleado.component';
+import { VistaEmpleadoComponent } from './components/vista-empleado/vista-empleado.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
-
   { path: 'empleados', component: ListaEmpleadoComponent },
+  {path: 'empleado/:id', component:VistaEmpleadoComponent},
   { path: 'footer', component: FooterComponent },
   { path: '**', component: Code404Component },
 ];

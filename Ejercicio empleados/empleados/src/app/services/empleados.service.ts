@@ -14,4 +14,8 @@ export class EmpleadosService {
   getAll(): Empleado[] {
     return this.arrEmpleados;
   }
+  getEmpleado(id:number): Empleado | any {
+    return this.arrEmpleados.find(empleado => empleado.id === id)
+    
+  }
 }
