@@ -1,25 +1,22 @@
 <p>vista-empleado works!</p>
-<div class="card" style="width: 18rem">
-    <img src="https://source.unsplash.com/user/c_v_r" class="card-img-top" alt="Free unsplash image" />
-    <div class="card-body">
-        <ul>
-            <li>
-                {{empleado.name}} {{empleado.surname}}
-            </li>
-            <li>
-                {{empleado.email}}
-            </li>
-            <li>
-                {{empleado.department}}
-            </li>
-
-        </ul>
-        <div class="card-buttons d-flex p-2 gap-2">
-
-            <button class="btn btn-success">{{empleado.status}}</button>
-            <button class="btn btn-secondary" [routerLink]="['/empleado', empleado.id]">Detalle</button>
-        </div>
-
+<div class="card d-flex flex-row" style="width: 18rem">
+  <img
+    src="https://source.unsplash.com/user/c_v_r"
+    class="card-img-top"
+    alt="Free unsplash image"
+  />
+  <div class="card-body">
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <div class="card-buttons d-flex p-2 gap-2">
+      <button class="btn btn-success"></button>
+      <button class="btn btn-secondary" [routerLink]="['/empleado']">
+        Detalle
+      </button>
     </div>
+  </div>
 </div>
 <button class="btn btn-primary" [routerLink]="['/home']">Home</button>
