@@ -1,0 +1,12 @@
+<section class="container mt-4">
+  <h1 class="text-white">Listado de empleados</h1>
+  <hr class="bg-light">
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+
+    <article class="col" *ngFor="let employee of arrEmployees">
+      <app-employee-card [myEmployee]="employee"></app-employee-card>
+    </article>
+
+  </div>
+</section>

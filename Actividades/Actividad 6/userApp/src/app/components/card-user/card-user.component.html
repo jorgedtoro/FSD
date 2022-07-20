@@ -1,0 +1,21 @@
+<!-- First card -->
+<div class="card" style="width: 18rem">
+  <img [src]="myUser.image" class="card-img-top mt-4" alt="Alumn photography" />
+  <div class="card-body">
+    <p class="card-text mb-4">{{ myUser.first_name }} {{ myUser.last_name }}</p>
+    <div class="card-body-icons d-flex gap-4">
+      <div class="card-body-icons-search d-flex flex-column align-items-center">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <p class="mt-2">Detalle</p>
+      </div>
+      <div class="card-body-icons-update d-flex flex-column align-items-center">
+        <i class="fa-solid fa-arrows-rotate"></i>
+        <p class="mt-2">Actualizar</p>
+      </div>
+      <div class="card-body-icons-erase d-flex flex-column align-items-center">
+        <i class="fa-solid fa-trash"></i>
+        <p class="mt-2">Borrar</p>
+      </div>
+    </div>
+  </div>
+</div>

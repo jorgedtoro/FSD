@@ -1,0 +1,20 @@
+<section class="container mt-4">
+  <div class="card shadow p-3 border-2">
+    <div class="row">
+      <figure class="col-12 col-md-4">
+        <img class="img" [src]="myEmployee.photo" [alt]="myEmployee.name">
+      </figure>
+      <div class="col-12 col-md-8">
+        <h2>{{myEmployee.name}} {{myEmployee.surname}}</h2>
+        <hr>
+        <ul>
+          <li>Email: {{myEmployee.email}}</li>
+          <li>Dni: {{ myEmployee.dni }}</li>
+          <li>Departamento: {{ myDepartment.title }}</li>
+        </ul>
+        <button (click)="changeStatus()" class="btn" [ngClass]="{'btn-success': myEmployee.status, 'btn-danger': !myEmployee.status}">{{ (myEmployee.status) ? 'Activo' : 'Inactivo' }}</button>
+        <button class="btn btn-dark ms-2" [routerLink]="['/employees']">Volver a listado</button>
+      </div>
+    </div>
+  </div>
+</section>
