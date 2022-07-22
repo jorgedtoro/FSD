@@ -19,4 +19,5 @@
 
 .card-body-icons {
     justify-content: center;
+    cursor: pointer;
 }

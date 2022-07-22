@@ -1,0 +1,21 @@
+
+.container{
+    margin-bottom: 10px;
+    height: calc(90vh - 42px);
+}
+
+.card-img-top {
+    max-width: 100%;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 1px solid lightgrey;
+    align-self: center;
+    padding: 8px;
+    margin-top: 8px;
+}
+
+.col-right{
+    max-width: 100%;
+    padding: 50px;
+}

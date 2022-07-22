@@ -1,14 +1,17 @@
 <!-- First card -->
-<div class="card" style="width: 18rem">
+<div class="card">
   <img [src]="myUser.image" class="card-img-top mt-4" alt="Alumn photography" />
   <div class="card-body">
     <p class="card-text mb-4">{{ myUser.first_name }} {{ myUser.last_name }}</p>
     <div class="card-body-icons d-flex gap-4">
       <div class="card-body-icons-search d-flex flex-column align-items-center">
         <i class="fa-solid fa-magnifying-glass"></i>
-        <p class="mt-2">Detalle</p>
+        <p class="mt-2" [routerLink]="['/user']">Detalle</p>
       </div>
-      <div class="card-body-icons-update d-flex flex-column align-items-center">
+      <div
+        class="card-body-icons-update d-flex flex-column align-items-center"
+        [routerLink]="['/actualizar']"
+      >
         <i class="fa-solid fa-arrows-rotate"></i>
         <p class="mt-2">Actualizar</p>
       </div>

@@ -1,1 +1,30 @@
-<p>form-user works!</p>
+<div class="container">
+  <form [formGroup]="userForm" (ngSubmit)="recogerDatosForm()">
+    <div class="mb-2 d-flex flex-column">
+      <label class="form-label" for="first_name">Nombre Usuario</label>
+      <input class="form-input" type="text" formControlName="first_name" />
+    </div>
+    <div class="mb-2 d-flex flex-column">
+      <label class="form-label" for="last_name">Apellido Usuario</label>
+      <input class="form-input" type="text" formControlName="last_name" />
+    </div>
+    <div class="mb-2 d-flex flex-column">
+      <label class="form-label" for="mail">Email Usuario</label>
+      <input class="form-input" type="text" formControlName="mail" />
+    </div>
+    <div class="mb-2 d-flex flex-column">
+      <label class="form-label" for="image">Imagen Usuario</label>
+      <input class="form-input" type="text" formControlName="image" />
+    </div>
+    <input
+      class="form-input-btn btn btn-primary"
+      type="submit"
+      value="Actualizar"
+      [disabled]="!userForm.valid"
+      [ngClass]="{
+        'btn-primary': userForm.valid,
+        'btn-secondary': !userForm.valid
+      }"
+    />
+  </form>
+</div>

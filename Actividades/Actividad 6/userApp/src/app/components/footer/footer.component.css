@@ -1,0 +1,14 @@
+/* FOOTER */
+.footer-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    background-color: #1876D1;
+    color: white;
+    text-decoration: none;
+    list-style: none;
+    max-height: 100%;
+    margin: 0px;
+}
