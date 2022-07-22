@@ -12,8 +12,10 @@ export class ListUsersComponent implements OnInit {
   //inyectamos el servicio en el constructor de la clase.
   constructor(private usersService: UsersService) {}
 
-  ngOnInit(): void {
-    this.arrUsers = this.usersService.getAll();
-    console.log(this.arrUsers);
+  async ngOnInit(): Promise<void> {
+    //hago una petición al servicio de los usuarios de la API.
+    //se gestiona la respuesta que es una promesa.
+    let response = await this.usersService.getAll();
+    this.arrUsers = response.data;
   }
 }

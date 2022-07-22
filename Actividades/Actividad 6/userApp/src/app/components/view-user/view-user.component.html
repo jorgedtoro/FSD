@@ -2,22 +2,30 @@
   <div class="row">
     <div class="col">
       <figure>
-        <img
-          class="card-img-top"
-          src="./assets/flat-ion-alumn.jpeg"
-          alt="name"
-        />
+        <img class="card-img-top" [src]="myUser.image" alt="name" />
       </figure>
     </div>
     <div class="col border-start col-right">
       <div class="data-user mb-5">
-        <p>Nombre del Usuario</p>
-        <p>Apellido del usuario del Usuario</p>
-        <p>Nick Usuario</p>
-        <p>mail del Usuario</p>
+        <p>
+          <span class="data-user__span">Nombre: </span> {{ myUser?.first_name }}
+        </p>
+        <p>
+          <span class="data-user__span">Apellido: </span>{{ myUser?.last_name }}
+        </p>
+        <p>
+          <span class="data-user__span">Nombre Usuario: </span>
+          {{ myUser?.username }}
+        </p>
+        <p>
+          <span class="data-user__span">Mail Usuario: </span>
+          <a [href]="'mailto:' + myUser?.mail">{{ myUser?.email }}</a>
+        </p>
       </div>
       <div class="btn-user d-flex gap-4">
-        <button class="btn btn-danger">Eliminar</button>
+        <button class="btn btn-danger" (click)="deleteUser(myUser.id)">
+          Eliminar
+        </button>
         <button class="btn btn-primary" [routerLink]="['/actualizar']">
           Actualizar
         </button>

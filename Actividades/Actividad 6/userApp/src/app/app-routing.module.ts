@@ -8,7 +8,7 @@ import { ViewUserComponent } from './components/view-user/view-user.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: ListUsersComponent },
-  { path: 'user', component: ViewUserComponent },
+  { path: 'user/:idUser', component: ViewUserComponent },
   { path: 'actualizar', component: FormUserComponent },
   { path: '**', component: Code404Component },
 ];
