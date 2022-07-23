@@ -1,23 +1,36 @@
 <nav class="navbar navbar-expand-lg bg-light">
-  <div class="container-fluid d-flex flex-row justify-content-between">
-    <div class="navbar-icons">
+  <div class="container-fluid d-flex flex-row">
+    <div class="navbar-icons gap-4 d-flex flex-row">
       <a
         class="icons__a text-black"
-        href="https://github.com/jorgedtoro/FSD/tree/master/Actividades/Actividad%205"
+        href="https://github.com/jorgedtoro/FSD/tree/master/Actividades/Actividad%206"
         target="_blank"
-        ><i class="fa-brands fa-github"></i
-      ></a>
+        ><i class="fa-brands fa-github fa-2x"></i>
+      </a>
+      <i class="fa-solid fa-rocket fa-2x"></i>
     </div>
+
     <div class="navbar-title">
-      <a class="navbar-brand" href="#">Actividad 6: Aplicación de Usuarios</a>
+      <h1 class="navbar-brand">Actividad 6: Aplicación de Usuarios</h1>
     </div>
     <div class="navbar-items navbar-menu">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a
+            class="nav-link active"
+            aria-current="page"
+            routerLinkActive="active"
+            [routerLink]="['/home']"
+            href="#"
+            >Home</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/actualizar']" href="#"
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            [routerLink]="['/actualizar']"
+            href="#"
             >New User
           </a>
         </li>
