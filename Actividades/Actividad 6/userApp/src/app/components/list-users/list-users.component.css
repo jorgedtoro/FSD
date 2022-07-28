@@ -3,3 +3,6 @@
 .container{
     margin-bottom: 20px;
 }
+
+.user-w:hover{
+    transform: scale(1.05);}
