@@ -27,7 +27,7 @@ export class ViewUserComponent implements OnInit {
       this.myUser = response;
     });
   }
-
+  //ToDo --> ver si este método debería estar en el servicio.
   async deleteUser(pId: number): Promise<void> {
     if (pId !== undefined) {
       let response = await this.usersService.delete(pId);
