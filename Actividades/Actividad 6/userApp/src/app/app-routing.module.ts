@@ -9,7 +9,8 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: ListUsersComponent },
   { path: 'user/:idUser', component: ViewUserComponent },
-  { path: 'actualizar', component: FormUserComponent },
+  { path: 'actualizar/:idUser', component: FormUserComponent },
+  { path: 'registro', component: FormUserComponent },
   { path: '**', component: Code404Component },
 ];
 

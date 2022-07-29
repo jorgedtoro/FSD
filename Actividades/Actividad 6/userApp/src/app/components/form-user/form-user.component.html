@@ -1,25 +1,46 @@
 <div class="container">
+  <h1 class="mb-4">{{ dinamicText }} usuario</h1>
   <form [formGroup]="userForm" (ngSubmit)="getDataForm()">
     <div class="mb-2 d-flex flex-column">
       <label class="form-label" for="first_name">Nombre Usuario</label>
-      <input class="form-input" type="text" formControlName="first_name" />
+      <input
+        class="form-label"
+        type="text"
+        id="first_name"
+        formControlName="first_name"
+      />
     </div>
     <div class="mb-2 d-flex flex-column">
       <label class="form-label" for="last_name">Apellido Usuario</label>
-      <input class="form-input" type="text" formControlName="last_name" />
+      <input
+        class="form-input"
+        type="text"
+        id="last_name"
+        formControlName="last_name"
+      />
     </div>
     <div class="mb-2 d-flex flex-column">
-      <label class="form-label" for="mail">Email Usuario</label>
-      <input class="form-input" type="text" formControlName="mail" />
+      <label class="form-label" for="email">Email Usuario</label>
+      <input
+        class="form-input"
+        type="text"
+        id="email"
+        formControlName="email"
+      />
     </div>
     <div class="mb-2 d-flex flex-column">
       <label class="form-label" for="image">Imagen Usuario</label>
-      <input class="form-input" type="text" formControlName="image" />
+      <input
+        class="form-input"
+        type="text"
+        id="image"
+        formControlName="image"
+      />
     </div>
     <input
       class="form-input-btn btn btn-primary"
       type="submit"
-      value="Actualizar"
+      [value]="dinamicText"
       [disabled]="!userForm.valid"
       [ngClass]="{
         'btn-primary': userForm.valid,

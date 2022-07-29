@@ -13,12 +13,12 @@ import { UsersService } from 'src/app/services/users.service';
 export class FormUserComponent implements OnInit {
   userForm: FormGroup;
   myUser: User | any;
-  
-  constructor
-    (
+  dinamicText: string = 'Nuevo';
+
+  constructor(
     private usersService: UsersService,
     private activatedRoute: ActivatedRoute
-    ) {
+  ) {
     this.userForm = new FormGroup(
       {
         first_name: new FormControl('', [
@@ -26,7 +26,7 @@ export class FormUserComponent implements OnInit {
           Validators.minLength(3),
         ]),
         last_name: new FormControl('', [Validators.required]),
-        mail: new FormControl('', [Validators.required, Validators.email]),
+        email: new FormControl('', [Validators.required, Validators.email]),
         image: new FormControl('', [Validators.required]),
       },
       []
@@ -34,14 +34,36 @@ export class FormUserComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.activatedRoute.params.subscribe(async(params: any) => { 
-    //   console.log(params.idUser);
-    // });
-    
+    //diferenciamos entre un registro nuevo y una actualización
+
+    this.activatedRoute.params.subscribe(async (params: any) => {
+      let id: number = parseInt(params.idUser);
+
+      if (id) {
+        this.dinamicText = 'Actualizar';
+        const response = await this.usersService.getById(id);
+
+        const user: User = response.data;
+
+        this.userForm = new FormGroup(
+          {
+            first_name: new FormControl(user?.first_name, []),
+            last_name: new FormControl(user?.last_name, []),
+            email: new FormControl(user?.email, [
+              Validators.required,
+              Validators.email,
+            ]),
+            image: new FormControl(user?.image, []),
+          },
+          []
+        );
+      }
+    });
   }
 
   async getDataForm(): Promise<void> {
     // let newUser = this.userForm.value;
-    // let response = await this.usersService.create(newUser)
+    // let response = await this.usersService.create(newUser);
+    // console.log(response);
   }
 }
