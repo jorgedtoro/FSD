@@ -4,9 +4,11 @@
 }
 .form-label, .form-input{
     margin-bottom: 4px;
-    max-width: 80%;
+    font-weight: 500;
+    /* max-width: 80%; */
 }
 .form-input-btn{
     margin-top: 4px;
+    width: 30%;
     
 }

@@ -26,7 +26,10 @@
         <button class="btn btn-danger" (click)="deleteUser(myUser.id)">
           Eliminar
         </button>
-        <button class="btn btn-primary" [routerLink]="['/actualizar']">
+        <button
+          class="btn btn-primary"
+          [routerLink]="['/actualizar', myUser.id]"
+        >
           Actualizar
         </button>
         <button class="btn btn-secondary" [routerLink]="['/home']">

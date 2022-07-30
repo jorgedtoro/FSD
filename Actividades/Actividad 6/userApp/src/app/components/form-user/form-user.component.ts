@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 import { User } from 'src/app/interfaces/user.interface';
 import { UsersService } from 'src/app/services/users.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-form-user',
@@ -43,17 +44,20 @@ export class FormUserComponent implements OnInit {
         this.dinamicText = 'Actualizar';
         const response = await this.usersService.getById(id);
 
-        const user: User = response.data;
+        const user: User = response;
 
         this.userForm = new FormGroup(
           {
-            first_name: new FormControl(user?.first_name, []),
-            last_name: new FormControl(user?.last_name, []),
+            first_name: new FormControl(user?.first_name, [
+              Validators.required,
+              Validators.minLength(3),
+            ]),
+            last_name: new FormControl(user?.last_name, [Validators.required]),
             email: new FormControl(user?.email, [
               Validators.required,
               Validators.email,
             ]),
-            image: new FormControl(user?.image, []),
+            image: new FormControl(user?.image, [Validators.required]),
           },
           []
         );
@@ -61,9 +65,18 @@ export class FormUserComponent implements OnInit {
     });
   }
 
-  async getDataForm(): Promise<void> {
-    // let newUser = this.userForm.value;
-    // let response = await this.usersService.create(newUser);
-    // console.log(response);
+  cancel(): void {
+    this.activatedRoute.params.subscribe((params: any) => {
+      let id: number = parseInt(params.idUser);
+      if (id) {
+        Swal.fire('El usuario no se ha actualizado');
+      } else {
+        Swal.fire('El usuario no se ha registrado');
+      }
+    });
+  }
+
+  getDataForm() {
+    // TODO update user and create a new user.
   }
 }
