@@ -36,6 +36,8 @@ export class CardUserComponent implements OnInit {
       }).then((result) => {
         if (result.isConfirmed) {
           Swal.fire('¡Eliminado!', `${message} ha sido eliminado`, 'success');
+        } else {
+          Swal.fire('Se ha cancelado el proceso');
         }
       });
     }

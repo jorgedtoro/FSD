@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/interfaces/user.interface';
 import { UsersService } from 'src/app/services/users.service';
 import Swal from 'sweetalert2';
@@ -14,7 +14,8 @@ export class ViewUserComponent implements OnInit {
 
   constructor(
     private usersService: UsersService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -47,6 +48,9 @@ export class ViewUserComponent implements OnInit {
       }).then((result) => {
         if (result.isConfirmed) {
           Swal.fire('¡Eliminado!', `${message} ha sido eliminado`, 'success');
+          this.router.navigate(['/home']);
+        } else {
+          Swal.fire('¡Se ha cancelado el proceso');
         }
       });
     }
